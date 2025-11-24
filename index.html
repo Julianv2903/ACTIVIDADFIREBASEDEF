@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harry Potter Ciudadela</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="harry-icon.png" type="image/png">
+</head>
+<body class="oscuro lluvioso">
+
+  <header>
+    <h1>Ciudadela de Harry Potter</h1>
+    <nav class="navegacion">
+      <button class="pestaña" onclick="mostrarSeccion('inicio')">Home</button>
+      <button class="pestaña" onclick="mostrarSeccion('registro')">Registro</button>
+      <button class="pestaña" onclick="mostrarSeccion('personajes')">Personajes</button>
+      <button class="pestaña" onclick="mostrarSeccion('contacto')">Perfil</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion">
+      <h2>Bienvenido a la Ciudadela</h2>
+      <p>Explora los pasillos de Hogwarts, descubre secretos y enfréntate a misterios ancestrales.</p>
+      <center><img src="IMAGEN/HarryPotter.gif" alt="Harry Potter"></center>
+    </section>
+
+    <section id="personajes" class="seccion oculto">
+      <h2>Personajes</h2>
+      <input type="text" id="buscador" placeholder="Buscar personaje..." oninput="buscarPersonaje()">
+      <div id="filtro-container">
+        <label for="filtro-casa">Filtrar por casa:</label>
+        <select id="filtro-casa" onchange="filtrarPorCasa()">
+          <option value="">Todas</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+      </div>
+      <div id="personajes-lista" class="grid-personajes"></div>
+    </section>
+
+    <section id="registro" class="seccion oculto">
+      <h2>Registro de Magos</h2>
+      <form id="registro-form">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo" required>
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <input type="password" id="contraseña" placeholder="Contraseña" required>
+        <input type="text" id="casa" placeholder="Casa" required>
+        <input type="text" id="varita" placeholder="Varita mágica" required>
+        <input type="date" id="nacimiento" required>
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+
+    <section id="contacto" class="seccion oculto">
+      <h2>Contacto</h2>
+      <p>¿Tienes preguntas? ¡Contáctanos!</p>
+      <ul class="contacto-info">
+        <li>📧 Correo: oscar.villamarinw@uniagustiniana.edu.co</li>
+        <li>💻 Github: https://github.com/Julianv2903</li>
+        <li>📜 Tecnologia en desarrollo de software</li>
+        <li>🧙‍♂️ Tecnologias avanzadas de programacion para moviles</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
